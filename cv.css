@@ -1,0 +1,266 @@
+:root {
+    --colorFondo: rgba(255, 255, 255, 0.986);
+    --tipoLetra1: Lucida Console;
+    --margen: 2%;
+    --anchoPagina: 85%;
+}
+
+/* header */
+header {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 2rem 0;
+    
+    position: fixed; /*header fijo*/
+    left: 0;
+    top: 0;
+    right: 0;
+    
+}
+
+/*Barra Navegadora*/
+
+    .header a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .barraNavegadora ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; /*deberia sacar las lineas de link*/
+        margin: auto;
+    }
+
+        .barraNavegadora ul li {
+            display: inline-block;
+        }
+
+            .barraNavegadora ul li a {
+                display: block;
+                padding: 0.5rem 0.5rem;
+                transition: all 0.3s linear;
+                border-radius: 5px;
+            }
+            .barraNavegadora ul li a:hover {
+                background: #4b4848f6;
+                color: rgb(13, 197, 126);
+            }
+
+.logoNavContainer {
+    display: flex; /* Poner una al lado de otra*/
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    letter-spacing: 15px;
+    font-size: 1.2em;
+}
+
+.menuIcon {
+    display: none;
+}
+
+main {
+    padding-top: 10rem; 
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+/* body */
+body {
+    background: var(--colorFondo);
+    color: #3f3844;
+    font-family: var(--tipoLetra1), Georgia, serif;
+    width: var(--anchoPagina);
+    max-width: 1200px;
+    text-align: center;
+    line-height: 1.6em;
+    margin: 0 auto;
+}
+
+.container {
+    width: 85%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.article {
+    width: var(--anchoPagina);
+}
+
+/*Encabezado Foto Perfil + Nombre*/
+.encabezado {
+    width: 100%;
+}
+    .encabezado ul{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+    }
+        .encabezado ul li{
+            display: inline-block;
+            width: 50%;
+        }
+            .encabezado ul li a { 
+                display: inline-flex;
+                padding: 0rem 0rem;
+            }
+                .encabezado ul li a img {
+                    width: 80%;
+                }
+                .encabezado ul li a div {
+                    width: 100%;
+                    margin-top: 27%;
+                    font-size: 2rem;
+                    line-height: 1.5em;
+                }
+
+/*Titulos de seccion  h2*/
+
+.h2 {
+    color: rgb(0, 0, 0) ;
+    font-weight: bold;
+    font-size: 1.7rem;
+    text-align: left;
+}
+
+h3 {
+    color: rgb(3, 2, 2) ;
+    font-weight: bold;
+}
+
+/* p */ 
+.texto {
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* texto dentro de imagen */
+.contenedorImagenTexto {
+    display: inline-flex;
+}
+.rectanguloDescripcion {
+    height: 100%; /*alto rectangulo*/
+    width: 100%; /*ancho rectangulo*/
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+}
+
+/* secciones */
+.seccionTop {
+    padding-top: 5%;
+}
+.seccion {
+    padding-bottom: 10%;
+}
+.subSeccion{
+    padding: var(--margen);
+    padding-bottom: 15px;
+    align-items: center;
+    width: 90%;
+}
+
+/* titulos */
+.contenedorTitulos{
+    height: 1rem;
+}
+
+.titulos {
+    text-align: left;
+    position: relative;
+    font-size: 20pt;
+    font-style: bold;
+}
+.subTitulos {
+    text-align: left;
+    position: relative;
+    font-size: 16pt;
+    font-style: bold;
+}
+
+/* encolumnado */
+.arbolColumnas{
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    /*division entre columnas*/
+    column-gap: 5rem; /* Chrome, Safari, Opera */
+    -moz-column-gap: 2rem; /* Firefox */
+    column-fill: auto;
+    column-count: 2; /* cantidad de columnas */
+    column-span: all;
+    column-width: 100%;
+    padding-left: 5%;
+    width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 970px) {
+
+    /* body */
+    body {
+        background: var(--colorFondo);
+        color: #3f3844;
+        font-family: var(--tipoLetra1), Georgia, serif;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        line-height: 1.6em;
+        margin: 0 auto;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    main {
+        padding: 0rem; /*uso el 100% del ancho de pagina*/
+        padding-top: 10rem; /*paddig para que se vea la pagina sobre la barra*/
+    }
+
+    .logo {
+        display: none;
+    }
+    .menuIcon {
+        display: block;
+        cursor: pointer;
+        transform: rotate(90deg);
+    }
+
+    .barraNavegadora {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .barraNavegadora {
+        display: none;
+    }
+
+    .barraNavegadora.mostrar {
+        display: block;
+        
+    }
+
+    .barraNavegadora ul li {
+        display: block;
+    }
+
+        .barraNavegadora ul li a {
+            display: block;
+            padding: 0.5rem 0;
+            transition: all 0.3s linear;
+            border-radius: 5px;
+        }
+        .barraNavegadora ul li a:hover {
+            background: #242222;
+            color: rgb(182, 76, 76);
+        }
+
+}
