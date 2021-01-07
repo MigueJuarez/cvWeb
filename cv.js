@@ -104,6 +104,9 @@ function main () {
         escrollear('contacto');
     });
 
+    $('#linkedIn').click(function () {
+        window.location.href = "https://ar.linkedin.com/in/miguel-juarez";
+    });
 
     /**
      * Funciones responsive
